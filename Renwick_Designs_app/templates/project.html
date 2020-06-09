@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        h1 {
+            font-family: cursive;
+            font-style: italic;
+            font-stretch: semi-expanded;
+            color: #40bb6a;
+            text-align: center;
+        }
+        .change {
+            text-align: right;
+            margin-right: 115px;
+        }
+        option {
+            font-style: italic;
+        }
+        img {
+            height: 300px;
+            width: 300px;
+            margin-left: 447px;
+            padding: 5px;
+        }
+        #project{
+            margin-right: 10px;
+        }
+        button{
+            margin-right: 10px;
+        }
+        *{
+            background-color: #f7f7f9;
+        }
+        form {
+            margin-left: 510px;
+        }
+    </style>
+    <title>Project</title>
+    {% load static %}
+</head>
+<body>
+<div>
+        <img src="{% static 'New_Logo.jpg' %}" >
+</div>
+   <h1>What is the Project that you are looking for?</h1>
+
+   
+
+    <div class="change"><p><a href="/profile">Go Back</a></p>
+    <p><a href="/logout">Logout</a></p></div>
+
+   <form action="/selectedProject" method="POST">
+    {% csrf_token %}
+<p><select name="project" id="project">
+    <option value="1">Calligraphy</option>
+    <option value="2">Lettering</option>
+</select></p>
+<br>
+<p><button class="btn btn-primary" type="submit">Select Project</button></p>
+</form>
+
+</body>
+</html>

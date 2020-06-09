@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Portfolio</title>
+    {% load static %}
+    <style>
+        .left {
+            display: inline-block;
+            margin-left: 73px;
+        }
+        .right {
+            display: inline-block;
+        }
+        .right2{
+            margin-left: 33px;
+        }
+        #head_image {
+            height: 400px;
+            width: 400px;
+            margin-left: 525px;
+        }
+        .head_right {
+            text-align: right;
+            margin-right: 90px;
+        }
+        img {
+            display: inline-block;
+            height: 400px;
+            width: 400px;
+        }
+        h1 {
+            font-family: cursive;
+            text-align: center;
+        }
+        h2 {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            text-align: center;
+            color: indianred;
+        }
+        h4 {
+            font-family: cursive;
+            font-style: italic;
+            color: grey;
+            text-align: center;
+        }
+        #dojo {
+            height: 300px;
+            width: 650px;
+        }
+        .alpha2 {
+            height: 300px;
+            width: 650px;
+            transform: rotate(90deg);
+        }
+        .lettering {
+            font-family: cursive;
+            text-align: center;
+            color: #40bb6a;
+        }
+        .rotate {
+            transform: rotate(90deg);
+        }
+        *{
+            background-color: #f7f7f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Portfolio</h1>
+    <img id="head_image" src="{% static 'New_Logo.jpg' %}" >
+    <div class="head_right">
+    <p><a href="/profile">Go Back</a></p>
+    <p><a href="/logout">Logout</a></p></div>
+    <h2>Calligraphy</h2>
+    <h4>The art of writing by execution of a broad tip instrument, typically a dip pen or a brush.</h4>
+    <div class="left">
+        <img class="rotate" src="{% static '20200224_104421.jpg' %}" >
+        <img class="rotate" src="{% static '20200224_104439.jpg' %}" >
+        <img class="rotate" src="{% static '20200224_104405.jpg' %}" >
+        <img src="{% static '20200207_060820.jpg' %}" >
+        <img src="{% static '20191215_175722.jpg' %}">
+        <img class="rotate" src="{% static '20200207_060832.jpg' %}" >
+    </div>
+
+    <h2 class= "lettering">Lettering</h2>
+    <h4>Lettering is simply defined as the art of drawing letters.</h4>
+    <div class="right">
+        <img id="dojo" src="{% static '20200213_205506.jpg' %}" >
+        <img id="dojo" src="{% static '20191024_100200.jpg' %}" >
+        <img id="dojo" src="{% static '20191031_142443.jpg' %}" >
+        <img id="dojo" src="{% static '20191022_200315.jpg' %}" >
+        <img src="{% static '20200224_104452.jpg' %}" >
+        <img src="{% static '20200224_221513.jpg' %}" >
+
+    </div>
+</body>
+</html>

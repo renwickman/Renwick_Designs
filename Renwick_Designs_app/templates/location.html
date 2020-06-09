@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Location</title>
+    {% load static %}
+    <style>
+        .left {
+            display: inline-block;
+            margin-left: 358px;
+            text-align: center;
+        }
+        .right {
+            display: inline-block;
+            margin-left: 358px;
+            text-align: center;
+        }
+        img {
+            height: 300px;
+            width: 300px;
+            margin-left: 447px;
+            padding: 5px;
+        }
+        h2 {
+            font-family: cursive;
+            font-style: italic;
+            font-stretch: semi-expanded;
+            color: #40bb6a;
+            text-align: center;
+        }
+        *{
+            background-color: #f7f7f9;
+        }
+        .change {
+            text-align: right;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<div>
+    <img src="{% static 'New_Logo.jpg' %}" >
+</div>
+<p class="change"><a href="/context">Go Back</a></p>
+<p class="change"><a href="/logout">Logout</a></p>
+<body>
+    
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{message}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <p><div class="left">
+    <h2>How many guests are you expecting?</h2>
+    <form action="/additionalInput" method="POST">
+        {% csrf_token %}
+        <select name="guests" id="people">
+            <option value="1">0-50</option>
+            <option value="2">51-100</option>
+            <option value="3">101-150</option>
+            <option value="4">151-200</option>
+            <option value="5">201-250</option>
+            <option value="6">251-299</option>
+            <option value="7">300+</option>
+        </select>
+    </div>
+</p>
+        <p><div class="right">
+            <h2>Where is the Location of the Event?</h2>
+            <p>Address: <input type="text" name="address"></p>
+            <p>City: <input type="text" name="city"></p>
+            <p>State: <input type="text" name="state"></p>
+            <p>Zip Code: <input type="number" name="zip_code"></p>
+            <p><button class="btn btn-primary" type="submit">Submit Additional Info</button></p>
+    </form>
+        </div>
+    </p>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Context</title>
+    {% load static %}
+    <style>
+        h1 {
+            font-family: cursive;
+            font-style: italic;
+            font-stretch: semi-expanded;
+            color: #40bb6a;
+            text-align: center;
+            margin-right: 250px;
+        }
+        img {
+            height: 300px;
+            width: 300px;
+            margin-left: 447px;
+            padding: 5px;
+        }
+        *{
+            background-color: #f7f7f9;
+        }
+        .right{
+            text-align: right;
+            margin-left: 15px;
+        }
+        form {
+            margin-left: 545px;
+        }
+    </style>
+</head>
+
+<div>
+    <img src="{% static 'New_Logo.jpg' %}" >
+</div>
+
+<div class="right"><p><a href="/project">Go Back</a></p>
+<p><a href="/logout">Logout</a></p></div>
+<body>
+    
+    <p><h1>What is the Context?:</h1></p>
+    <br>
+
+    <form action="/selectedContext" method="POST">
+        {% csrf_token %}
+    <p><select name="context" id="party">
+        <option value="1">Birthday Party</option>
+        <option value="2">Wedding</option>
+        <option value="3">Engagement</option>
+        <option value="4">Baby Shower</option>
+        <option value="5">Surprise Party</option>
+        <option value="6">Graduation Party</option>
+    </select></p>
+    <br>
+    <p><button class="btn btn-primary" type="submit">Select Context</button></p>
+</form>
+</body>
+</html>

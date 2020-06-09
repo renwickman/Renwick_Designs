@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>User_Profile</title>
+    {% load static %}
+    <style>
+        *{
+            background-color: #f7f7f9;
+            margin-left: 25px;
+        }
+        .right {
+            text-align: right;
+            margin-right: 25px;
+            font-family: cursive;
+        }
+        h2{
+            font-family: cursive;
+        }
+        img {
+            height: 450px;
+            width: 450px;
+            margin-left: 447px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="{% static 'New_Logo.jpg' %}" >
+    </div>
+    <h2>Welcome, {{request.session.user}} </h2>
+
+    {% for project in all_designs reversed %}
+    {% for context in all_designs reversed %}
+
+    {{projectDone.user}}  {{contextDone.user}} 
+    
+    {% if project.user.id == request.session.user_id %}
+    {% endif %}
+    {% if context.user.id == request.session.user_id %}
+    {% endif %}
+
+    {% endfor %}
+    {% endfor %}
+
+
+    <div class="right"><p><a href="/portfolio">View Portfolio</a></p>
+    <p><a href="/project">Request a Design Service</a></p>
+    <p><a href="/logout">Logout</a></p></div>
+</body>
+</html>
+
+
